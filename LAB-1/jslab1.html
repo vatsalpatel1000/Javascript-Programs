@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="start()" value="click">
+    <div id="root">
+
+    </div>
+<script>
+    function start(){
+
+  
+        function init(name,id,price,quant){
+        
+        return{
+            name:name,
+            id:id,
+            price:price,
+            quant:quant
+        }
+    }
+      
+    var a=init("laptop",001,70000,6);
+    var b=init("books",002,300,45);
+    var c=init("keyboards",003,500,23);
+    
+    
+    var content=document.createElement('div');
+
+    const article="NAME:---------"+a.name+"<br>     ID OF PRODUCT------------"+a.id+"   QUANTITY---------------"+a.quant+"<br>    PRICE-----------"+a.price+"<br>"+"total:-------"+a.price*a.quant;
+    
+    const article2="NAME:--------"+b.name+"<br>    ID OF PRODUCT:------------"+b.id+"   QUANTITY:--------------"+b.quant+" <br>   PRICE:----------"+b.price+"<br>"+"total:-------"+b.price*b.quant;
+    
+    content.innerHTML='<div>'+article+"</div><br><hr>"+'<div>'+article2+'</div><hr>'
+    
+    document.getElementById('root').append(content);
+    }
+</script>
+
+
+</body>
+</html>

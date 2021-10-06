@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    [required] {
+        outline: 1px solid red;
+      }
+      </style>
+<script>
+    /*var forms = document.querySelectorAll('.validate');
+for (var i = 0; i < forms.length; i++) {
+    forms[i].setAttribute('novalidate', true);
+}*/
+var requiredElements = document.getElementById("form").querySelectorAll("[required]"),
+  c = document.getElementById("check"),
+  o = document.getElementById("output");
+
+c.addEventListener("click", function() {
+  var s = "";
+  for (var i = 0; i < requiredElements.length; i++) {
+    var e = requiredElements[i];
+    s += e.id + ": " + (e.value.length ? "Filled" : "Not Filled") + "<br>";
+  }
+  o.innerHTML = s;
+});
+
+</script>
+</head>
+<body>
+
+<h2>Disable Native Browser Validation</h2>
+
+<form id="form">
+    <input required type="text" id="text1" />
+    <input required type="text" id="text2" />
+    <input type="text" id="text3" />
+    <input type="text" id="text4" />
+    <input required type="text" id="text5" />
+  </form>
+  
+  <br>
+  
+  <button id="check">Check</button>
+  
+  <br>
+  
+  <div id="output">
+    Required inputs
+  </div>
+</form>
+
+</body>
+</html>
+
+

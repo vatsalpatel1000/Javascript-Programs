@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+</head>
+<body>
+    <input type="button" onclick="init()" value="click">
+    <div id="root"></div>
+    <script>
+        function init(){
+            const shop = document.createElement("h1");
+            shop.innerHTML = "IN TO MY INVENTORY";
+
+            const divider = document.createElement("hr");
+            document.getElementById("root").appendChild(shop);
+            document.getElementById("root").appendChild(divider);
+
+            const ob1 = new Inventory ("01","Notebook",100);
+            const ob2 = new Inventory ("02","Pen",10);
+            const ob3 = new Inventory ("03","Sheets",50);
+            const ob4 = new Inventory ("04","Pencil",10);
+
+            ob1.stockInfo();
+            ob2.stockInfo();
+            ob3.stockInfo();
+            ob4.stockInfo();
+        }
+        class Inventory{
+            constructor(ID,Name,Price){
+                this.ID=ID;
+                this.Name=Name;
+                this.Price=Price;
+            }
+            stockInfo(){
+                const ID = document.createElement("div");
+                const Name = document.createElement("div");
+                const Price = document.createElement("div");
+                const divider = document.createElement("div");
+
+                ID.innerHTML=`ID: ${this.ID}`;
+                Name.innerHTML=`Name Of Product: ${this.Name}`;
+                Price.innerHTML=`Price: ${this.Price}`;
+                divider.innerHTML="<hr>";
+
+                document.getElementById("root").appendChild(ID);
+                document.getElementById("root").appendChild(Name);
+                document.getElementById("root").appendChild(Price);
+                document.getElementById("root").appendChild(divider);
+
+            }
+        }
+    </script>
+</body>
+</html>

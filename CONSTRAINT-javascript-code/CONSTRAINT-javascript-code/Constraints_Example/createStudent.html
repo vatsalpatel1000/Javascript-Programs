@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constraints Example</title>
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/student.js"></script>
+    <script src="src/view/createStudent.js"></script>
+    <script>
+      window.addEventListener('load', init.view.createStudent.setupUI);
+    </script>
+  </head>
+  <body>
+    <h1>Add Student Details</h1>
+    <form style="display: flex; flex-direction: column; width: 220px">
+      <input style="margin-bottom: 16px" id="first_name" type="text" placeholder="Enter first name" />
+      <input style="margin-bottom: 16px" id="last_name" type="text" placeholder="Enter last name" />
+      <input style="margin-bottom: 16px" id="age" type="text" placeholder="Enter age" />
+      <!-- Bellow is a simple solution if you are using browser bultin number type -->
+      <input style="margin-bottom: 16px" id="roll_number" type="number" placeholder="Enter your roll number" />
+
+      <div>
+        <button id="save_student" type="submit">Add Student</button>
+      </div>
+    </form>
+    <div style="margin-top: 8px">
+      <a href="index.html">
+        <button>Back</button>
+      </a>
+    </div>
+  </body>
+</html>

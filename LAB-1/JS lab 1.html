@@ -1,0 +1,38 @@
+<!doctype html>
+<head><h1>Inventor management system</h1></head>
+<body>
+    <script>
+        class Bikes{
+            constructor(bikeName,mileage,cc,fuel)
+            {
+                this.bikeName=bikeName;
+                this.mileage=mileage;
+                this.cc=cc;
+                this.fuel=fuel;
+            }
+    
+        }
+        var bike1=new Bikes("Pulsar 250","40 kmpl","250cc","Petrol");
+        var bike2=new Bikes("Ninja 300","26 kmpl","300cc","Petrol");
+        var bike3=new Bikes("Dominar 400","27 kmpl","400cc","Petrol");
+        
+        document.write("Bike Name: "+bike1.bikeName+"</br>"+
+                        "Mileage: "+bike1.mileage+"</br>"+
+                        "Engine CC: "+bike1.cc+"</br>"+
+                        "Fuel type: "+bike1.fuel+"</br>"+
+                        "-----------------------------------------------------------------"+"</br>");
+
+        document.write("Bike Name: "+bike2.bikeName+"</br>"+
+                        "Mileage: "+bike2.mileage+"</br>"+
+                        "Engine CC: "+bike2.cc+"</br>"+
+                        "Fuel type: "+bike2.fuel+"</br>"+
+                        "-----------------------------------------------------------------"+"</br>");
+        
+        document.write("Bike Name: "+bike3.bikeName+"</br>"+
+                        "Mileage: "+bike3.mileage+"</br>"+
+                        "Engine CC: "+bike3.cc+"</br>"+
+                        "Fuel type: "+bike3.fuel+"</br>"+
+                        "-----------------------------------------------------------------"+"</br>");
+    </script>
+</body>
+</html>

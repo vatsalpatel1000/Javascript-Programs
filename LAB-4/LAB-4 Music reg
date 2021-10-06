@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>MUSIC ACADEMY</title>
+        <style>
+           .jumbotron{
+                background-color:#7a86b0;
+           }
+
+           form{
+               padding-bottom: 20px;
+               padding-left: 20px;
+           }
+
+           h1{
+               text-align: center;
+           }
+
+           footer{
+                background-color: gray;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .fname, .lname,.email,.age,.addr,.pno{
+                margin:20px;
+            }
+
+            .registerbtn{
+                margin:20px;
+            }
+
+
+        </style>
+        <script>
+            function validateForm(){
+                let x=document.forms["myform"]["fname"].value;
+                if(x==""){
+                    alert("Name cannot be empty");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-4">Music Academy Registration Form</h1>
+            <hr>
+        </div>
+        <form id="form" name="validate" onsubmit="validateForm() ">
+        <div class="row">
+        <div class="col-md-4">
+            <b><label>First Name</label></b><br>
+            <input type="text" class="fname" id="name" placeholder="First Name" name="fname" required pattern="[A-Za-z]+"/><br>
+
+            <b><label>Last Name</label></b><br>
+            <input type="text" class="lname" id="name" placeholder="Last Name" name="lname" required pattern="[A-Za-z]+"/><br>
+
+            <b><label>Email</label></b><br>
+            <input type="text" class="email" id="email" placeholder="Enter Email" name="email" pattern="^[a-z0-9]+@[a-z]+\.com$" required/><br>
+
+            <b><label>Experience</label></b><br>
+            <select class="lname" name="course">
+                <option>--Select--</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+            </select><br>
+            
+
+        </div> 
+        <div class="col-md-4">   
+            <b><label>Age</label></b><br>
+            <input type="text" class="age" id="age" placeholder="Enter Age" name="age" min="18" max="60" required /><br>
+
+            <b><label/label>Address</label></b><br>
+            <textarea class="addr" id="address" placeholder="Enter Address" name="addr" required ></textarea><br>
+
+            <b><label/label>Phone No</label></b><br>
+            <input class="pno" id="phone" placeholder="Enter Pnone No." type="text" name="phno" pattern="[0-9]{10}" required/><br><br>
+        </div>
+        <div class="col-md-4">  
+            <b><label>Gender</label></b><br>
+            <input type="radio" name="gender" value="male"/> Male
+            <input type="radio" name="gender" value="female"> Female 
+            <input type="radio" name="gender" value="other"> Other<br><br>
+
+            <b><label>Instruments</label></b>
+            <select name="course">
+                <option>--Select--</option>
+                <option>Guitar</option>
+                <option>Piano</option>
+                <option>Drums</option>
+                <option>Flute</option>
+            </select><br><br>
+
+            <b><label>Lesson Days </label></b><br>
+            <input type="checkbox" name="sun"/>Sunday<br>
+            <input type="checkbox" name="mon"/>Monday<br>
+            <input type="checkbox" name="tue"/>Tuesday<br>
+            <input type="checkbox" name="wed"/>Wednesday<br>
+            <input type="checkbox" name="thur"/>Thursday<br>
+            <input type="checkbox" name="fri"/>Friday<br>
+            <input type="checkbox" name="sat"/>Saturday<br><br>
+
+            <b><label>Timings</label></b><br>
+            <input type="radio" name="time" value="b1"/>6.00-8.00 am
+            <input type="radio" name="time" value="b2"/>6.00-8.00 pm
+            <hr>
+        </div>
+    </div>
+            <button type="submit" onsubmit="validateForm() " class="registerbtn">Register</button>
+
+        </form>
+        <script>
+            /* validate name */
+            const name = document.getElementById("name");
+            name.addEventListener("input", () => {
+                name.setCustomValidity("");
+                name.checkValidity();
+            });
+            name.addEventListener("invalid", () => {
+            if (name.value === "") {
+                name.setCustomValidity("Please enter a name");
+            } 
+            else {
+                name.setCustomValidity("Enter only Uppercase and lowercase characters");
+            }
+            });
+
+            /*validate email */
+            const email = document.getElementById("email");
+            email.addEventListener("input", () => {
+                email.setCustomValidity("");
+                email.checkValidity();
+            });
+            email.addEventListener("invalid", () => {
+            if (email.value === "") {
+                email.setCustomValidity("Please enter a email id");
+            } 
+            else {
+                email.setCustomValidity("Enter valid mail id");
+            }
+            }); 
+
+            /* validate age */
+            const age = document.getElementById("age");
+			age.addEventListener("input", () => {
+				age.setCustomValidity("");
+				age.checkValidity();
+			});
+			age.addEventListener("invalid", () => {
+				if (age.value === "") {
+					age.setCustomValidity("Please enter an Age");
+				} else {
+					age.setCustomValidity("Enter a Valid age");
+				}
+			});
+
+            /* validate address */
+            const address = document.getElementById("address");
+			address.addEventListener("input", () => {
+				address.setCustomValidity("");
+				address.checkValidity();
+			});
+			address.addEventListener("invalid", () => {
+				if (address.value === "") {
+					address.setCustomValidity("Please enter an address");
+				} else {
+					address.setCustomValidity("Enter a Valid Address");
+				}
+			});
+
+            /* validate phone no */
+            const phone = document.getElementById("phone");
+			phone.addEventListener("input", () => {
+				phone.setCustomValidity("");
+				phone.checkValidity();
+			});
+			phone.addEventListener("invalid", () => {
+				if (phone.value === "") {
+					phone.setCustomValidity("Please enter a Phone Number");
+				} else {
+					phone.setCustomValidity("Enter a Valid Phone number");
+				}
+			});
+        </script>
+        <footer>Music academy all rights reserved &#169; 2021</footer>
+    </body>
+</html>
+
+

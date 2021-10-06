@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Employee Attendance</title>
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/emp.js"></script>
+    <script src="src/view/createemp.js"></script>
+    <script>
+        window.addEventListener('load',init.view.createemp.setupUI);
+    </script>
+</head>
+<body>
+<h2>Eployee Attendance System</h2>
+<form id='Employee'>
+ <label>Name:</label><br>
+            <input type="text" placeholder="Name" id='t1' name="ename"/><br>
+        
+        <label>Employee Id:</label><br>
+            <input type="text" placeholder="Id" id='t2' name="eid"/><br>
+        <label>Department:</label><br>
+            <select  id='t3' name="dept">
+                <option value="MCA" selected>MCA</option>
+                <option value="CSE">CSE</option>
+                <option value="ISE">ISE</option>
+                <option value="Mech">Mech</option>
+            </select>
+            <br>
+
+        <label>Date:</label><br>
+            <input type="date" id='t4' name="dte"/>
+            <br>
+        <label>Attendance:</label>
+            <input type="radio" id='r1' name="attn">Present
+            <input type="radio" id='r1' name="attn">Absent
+
+
+            <br>
+                    <label>Reason for absence:</label><br>
+            <input type="text" placeholder="Absence" id='t5' name="abs"/><br>
+            <br>
+            <button type="button" name="commit">Save</button>
+            <hr><br>
+
+            <nav><a href="list.html"><button type="button" name="List">List</button></a></nav>
+</form>
+
+</body>
+</html>

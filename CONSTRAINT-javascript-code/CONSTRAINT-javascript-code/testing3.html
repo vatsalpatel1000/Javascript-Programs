@@ -1,0 +1,26 @@
+<html>
+
+<head>
+<script type="text/javascript">
+    function validate(){
+        x=document.myForm
+        txt=x.myInput.value
+        if (txt>=1 && txt<=5) {
+            return true
+        }else{
+            alert("Must be between 1 and 5")
+            return false
+        }
+}
+</script>
+</head>
+
+<body>
+    <form name="myForm" action="" onsubmit="return validate()">
+    Enter a value from 1 to 5: 
+    <input type="text" name="myInput" size="20">
+    <input type="submit" value="Submit">
+</form>
+</body>
+
+</html>

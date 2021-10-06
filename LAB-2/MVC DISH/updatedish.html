@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="src/controller/controller.js"></script>
+    <script src="src/model/model.js"></script>
+    <script src="src/view/updatedish.js"></script>
+    <script>
+        window.addEventListener('load',init.view.update.dish);
+    </script>
+</head>
+<body>
+    
+    <form id="form">
+        <label for="">
+            choose a dish from drop down
+            <select name="select" id="select">
+                <option value="">----</option>
+            </select>
+            <input type="button" id="selectdish" value="click to update data">
+            <br>
+        </label>
+       
+        <label for="">ID 
+            <input id="id" type="text" readonly>
+        </label>
+        <label for="">name
+            <input type="text" id="name">
+        </label>
+        <label for="">price
+            <input type="text" id="price">
+        </label>
+        <input type="button" id="submit" value="click to update">
+    </form>
+</body>
+</html>
